@@ -7,8 +7,8 @@ This would only make a difference on multicore systems.
 To run this application:
 1. navigate to the root folder of the repository
 2. npm i
-3. node index.js
+3. node anagram.js
+
 The console will then spit out the secret phrases.
 You will need nodejs installed to run the application.
-
 
