@@ -11,29 +11,17 @@ hard = "665e5bcb0c20062fe8abaaf4628bb154"
 Elapsed = require('ns-elapsed')
 e = new Elapsed()
 #possiblePhrases = []
-i=0
+i= 0
+currentNumber = 0 
 module.exports=->
 	setupDictionary ()->
 		parsePhrase()
-		#keys.sort()
-		#console.log keys.length
-		#console.log findPossibleKeys ['a', 'n', 't', 's'], keys, true
-		#console.log getNewWordList(['a', 'n', 't', 's'], wordarray)
-		#console.log "printout".split("").sort().join("")
-		#console.log "stout".split("").sort().join("")
-		#console.log "yawls".split("").sort().join("")
-		#anagrams "", sortedPhraseLetterArray, wordarray
-		#anagramsKey "", sortedPhraseLetterArray, keys
 		i=0
 		anagramsKeyMaxWord 3, "", sortedPhraseLetterArray, keys,null, ()->
-			#console.log possiblePhrases
-			#i=0
-			#anagramsKeyMaxWord 2, "", sortedPhraseLetterArray, keys,null, ()->
-				#i=0
-				#anagramsKeyMaxWord 3, "", sortedPhraseLetterArray, keys,null, ()->
-					#i=0
-					#anagramsKeyMaxWord 4, "", sortedPhraseLetterArray, keys,null, ()->
-						#console.log "got em"
+			i=0
+			anagramsKeyMaxWord 4, "", sortedPhraseLetterArray, keys,null, ()->
+				i=0
+						
 
 
 anagrams = (word, remainingletters, wordlist, phrase)->
@@ -62,26 +50,19 @@ anagrams = (word, remainingletters, wordlist, phrase)->
 			console.log phrase, "is medium"
 		if hard is hash
 			console.log phrase, "is hard"
-i= 0
-currentNumber = 0 
+
 anagramsKey = (key, remainingletters, remainingKeys, phrase)->
 	templetters = removeLetters(key, remainingletters)
 	newList = findPossibleKeys(templetters, remainingKeys)
-	#console.log phrase
 	if newList.length > 0
 		newList.forEach (word)->
 			if word.length > 3
 				tempphrase = phrase
 				if not phrase
 					i++
-					#number = (100*i/1975).toFixed(0)
-					#if currentNumber<number
-						#currentNumber = number
-						#console.log number + '% done'
 					tempphrase = word
 				else
 					tempphrase += " " +word
-				#console.log word
 				if tempphrase.split(" ").length<4
 					anagramsKey word, templetters.slice(), newList.slice(), tempphrase
 	else

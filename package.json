@@ -9,6 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crypto": "^1.0.1"
+    "coffee-script": "^1.12.7",
+    "crypto": "^1.0.1",
+    "ns-elapsed": "^1.0.2"
   }
 }
